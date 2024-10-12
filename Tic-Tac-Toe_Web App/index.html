@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="toe-icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="toe-icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="toe-icons/favicon-16x16.png">
+    <link rel="manifest" href="toe-icons/site.webmanifest">
+
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="status-message" id="statusMessage">It's X's turn</div>
+        <div class="game-board" id="gameBoard">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <button id="resetButton">Restart Game</button>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="sound/game-music-loop-6-144641.mp3" type="audio/mp3">
+        yourr browser does not support the audio element.
+    </audio>
+    
+    <audio id="aiWinSound" src="sound/aiwin.mp3"></audio>
+    <audio id="resetSound" src="sound/select-sound-121244.mp3"></audio>
+    <audio id="clickSound" src="sound/pop-sound-effect-197846.mp3"></audio>
+    <audio id="winSound" src="sound/win sound.mp3"></audio>
+    <audio id="tieSound" src="sound/game-fail-90322.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

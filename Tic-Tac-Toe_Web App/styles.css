@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+audio {
+    display: none;
+}
+
+
+body {
+    background-image: url(assets/images/background.jpg);
+    display: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 100vh;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #DD3D0A;
+    filter: drop-shadow(2px 4px #000000 );
+    font-family:Verdana, Geneva, Tahoma;
+    font-size: 2.5rem;
+    margin-block-end: 1rem;
+}
+
+.status-message {
+    color:rgb(0, 0, 0);
+    filter: drop-shadow(1.5px 3px #DD3D0A );
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    margin-block-end: 1rem;
+}
+
+.game-board {
+    color: #000000;
+    filter: drop-shadow(1.5px 3px #DD3D0A );
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.cell {
+    inline-size: 100px;
+    block-size: 100px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 5px  #DD3D0A;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell.clicked {
+    font-family: cursive;
+    animation: press 0.3s ease;
+}
+
+@keyframes press {
+    100% {
+        transform: scale(0.9);
+    }
+    0% {
+        transform: scale(1);
+    }
+}
+
+.cell.win {
+    animation: winEffect 0.8s ease-in-out infinite;
+}
+
+@keyframes winEffect {
+    0% {
+        background-color: #ffc8a1;
+    }
+    50% {
+        background-color: #ffa03b;
+    }
+    100% {
+        background-color: #ffc7a1;
+    }
+}
+
+#resetButton {
+    font-family: cursive;
+    margin-block-start: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer; 
+    background-color: #00000000;
+    border: 2px solid black;
+    filter: drop-shadow(1.5px 3px #DD3D0A );
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#resetButton:active {
+    background-color: #DD3D0A;
+    transform: scale(0.95);
+    box-shadow: 0px 5px 15px rgb(69, 67, 67);
+}
+
+.cell {
+    animation: slideIn 0.6s ease-out forwards, slideIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translatey(100%); /* Start off-screen to the left */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translatey(0); /* End in original position */
+        opacity: 1; /* End fully visible */
+    }
+}
